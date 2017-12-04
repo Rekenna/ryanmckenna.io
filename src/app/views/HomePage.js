@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {client} from "../../config/client";
 
 import Banner from '../../assets/splash.jpg';
-import Resume from '../../assets/ryanmckenna-resume2017.pdf';
+// import Resume from '../../assets/ryanmckenna-resume2017.pdf';
 
 import PersonalProject from "../components/PersonalProject"
 
@@ -11,7 +11,8 @@ export default class HomePage extends Component {
         super();
 
         this.state = {
-            projects: []
+            projects: [],
+            resumeLink: '//downloads.contentful.com/mw4l9lx40x7x/2nHNs0ldny0i2iquoYuGi4/44972ed843215b957f39cf7f04675c59/ryanmckenna-resume2017.pdf'
         }
 
         this._fetchProjects = this._fetchProjects.bind(this);
@@ -35,8 +36,19 @@ export default class HomePage extends Component {
         });
     }
 
+    _setResumeLink(){
+        const self = this;
+        client.getAsset('2nHNs0ldny0i2iquoYuGi4')
+            .then(function (asset) {
+                self.setState({
+                    resumeLink: asset.fields.file.url
+                })
+            })
+    }
+
     componentDidMount(){
         this._fetchProjects()
+        this._setResumeLink()
     }
 
     render() {
@@ -61,7 +73,7 @@ export default class HomePage extends Component {
                                 <div className="d-none d-md-block">
                                     <div className="actions">
                                         <a href="mailto:ryanpatmckenna@gmail.com"><i className="fa fa-telegram"></i>Email</a>
-                                        <a target="_blank" href={Resume}><i className="fa fa-download"></i>Resume</a>
+                                        <a target="_blank" href={this.state.resumeLink}><i className="fa fa-download"></i>Resume</a>
                                     </div>
                                 </div>
                                 <ul className="links">
