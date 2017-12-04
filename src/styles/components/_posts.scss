@@ -1,0 +1,71 @@
+.featured-post{
+  h2{
+    font-family: $mont;
+    color: $sunset;
+    font-weight: bold;
+    margin: 0 auto 15px auto;
+    font-size: 1.25em;
+    text-transform: uppercase;
+  }
+  .featured-content{
+    margin: 15px auto;
+    color: $white;
+  }
+  h5{
+    font-family: $mont;
+    font-weight: bold;
+    font-size: 1.75em;
+    a{
+      color: $white;
+    }
+  }
+}
+
+.post-tease .content{
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+  background-color: $offwhite;
+  .info{
+    padding: 15px;
+  }
+  h5{
+    font: 1.15em;
+    font-family: $mont;
+  }
+  p.date{
+    color: $grey;
+    font-size: .75em;
+    margin: 10px auto;
+  }
+  .link-wrapper{
+    text-align: right;
+    margin: 0;
+  }
+  a.post-link{
+    padding: 6px 12px;
+    color: $space;
+    border: 2px solid $space;
+    display: inline-block;
+    transition: all .1s ease-in;
+    i{
+      margin-right: 6px;
+    }
+    &:hover{
+      background-color: $space;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+.post-page{
+  margin-top: 46px;
+  article{
+    padding: 30px 0;
+  }
+  header{
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,48 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "variables";
+
+@import "components/site-navigation";
+@import "components/splash";
+@import "components/posts";
+@import "components/projects";
+
+@import "views/home-page";
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $open;
+  font-size: 16px;
+  font-weight: lighter;
+  background-image: url("../assets/dust.png");
+  -webkit-text-size-adjust: 100%;
+}
+
+img{
+  max-width: 100%;
+}
+
+.browser-upgrade{
+  text-align: center;
+  padding: 15px;
+}
+
+.page-content{
+  margin: 30px auto 0;
+  @include media-breakpoint-up(md){
+    margin: 0;
+  }
+}
+
+.site-footer{
+  text-align: center;
+  padding: 15px;
+  p.copyright{
+    margin: 0;
+    span{
+      color: $sunset;
+      font-weight: bold;
+    }
+  }
+}
