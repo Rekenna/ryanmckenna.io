@@ -8,11 +8,16 @@
     "moment": "^2.19.3",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.2",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-ga": "^2.3.5",
+    "react-helmet": "^5.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
-    "showdown": "^1.8.3"
+    "react-waypoint": "^7.3.2",
+    "showdown": "^1.8.3",
+    "slugify": "^1.2.6"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",

@@ -1,0 +1,90 @@
+.projects-page, .projects-post{
+  margin-top: 0px;
+  @include media-breakpoint-up(md) {
+    margin-top: 46px;
+  }
+}
+
+.projects-post{
+  padding: 2em 0;
+}
+
+section.projects-grid{
+  padding: 2em 0;
+  .project{
+    display: block;
+    width: 100%;
+  }
+  .image-link{
+    background-color: $sunset;
+    background-size: cover;
+    background-position: center;
+    padding-top: 55%;
+    width: 100%;
+    position: relative;
+    span.snippet{
+      position: absolute;
+      font-size: 1.25em;
+      line-height: 1.4em;
+      max-width: 20em;
+      top: 2em;
+      left: 25%;
+      right: 0.5em;
+      padding-right: 3em;
+      color: $white;
+      opacity: 0;
+      transition: all .3s ease-out;
+      letter-spacing: .5px;
+      transform: translateY(15px);
+      transition-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($sunset, .8);
+      opacity: 0;
+      transition: all .3s ease;
+    }
+    &:hover:after{
+      opacity: 1;
+    }
+  }
+  .info{
+    margin: 1em 0;
+    padding-left: 25%;
+  }
+  a{
+    display: inline-block;
+    margin-bottom: 1em;
+    h3, p, img{
+      transition: all .3s ease-out;
+    }
+    h3{
+      color: $dark;
+    }
+    p{
+      color: $grey;
+    }
+  }
+  a:hover{
+    text-decoration: none;
+    h3{
+      color: $sunset;
+    }
+    p{
+      color: $dark;
+    }
+    figcaption{
+      opacity: 1;
+      transform: translateY(0);
+    }
+    img{
+      opacity: 0.1;
+      -webkit-backface-visibility: hidden;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+
+.post .topics{
+  text-align: left;
+  margin: 0 0 .25em;
+  padding: 0;
+  list-style-type: none;
+  li{
+    display: inline-block;
+    &+li{
+      margin-left: .25em;
+    }
+  }
+  li a{
+    display: inline-block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $grey;
+    &:before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background-color: $white;
+      z-index: 3;
+      opacity: 0;
+      transition: all .3s ease;
+    }
+    &:hover:before{
+      width: 5px;
+      height: 5px;
+      opacity: 1;
+    }
+    &:hover span{
+      opacity: 1;
+      visibility: visible;
+    }
+    span{
+      position: absolute;
+      top: -2.5em;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      background-color: $grey;
+      color: $white;
+      padding: .25em .75em;
+      font-size: .8em;
+      border-radius: .5em;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s ease;
+      &:before, &:after{
+        content: "";
+        position: absolute;
+        left: 50.5%;
+        transform: translateX(-50%);
+      }
+      &:before{
+        width: 100%;
+        height: .5em;
+        bottom: -.5em;
+      }
+      &:after{
+        bottom: -.25em;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: .25em .5em 0 .5em;
+        border-color: $grey transparent transparent transparent;
+      }
+    }
+    &.personal, &.personal span{
+      background-color: $mint;
+      &:after{
+        border-color: $mint transparent transparent transparent;
+      }
+    }
+    &.design, &.design span{
+      background-color: $baby;
+      &:after{
+        border-color: $baby transparent transparent transparent;
+      }
+    }
+    &.development, &.development span{
+      background-color: $sunset;
+      &:after{
+        border-color: $sunset transparent transparent transparent;
+      }
+    }
+    &.dnd, &.dnd span{
+      background-color: $periwinkle;
+      &:after{
+        border-color: $periwinkle transparent transparent transparent;
+      }
+    }
+    &.gaming, &.gaming span{
+      background-color: $torquiose;
+      &:after{
+        border-color: $torquiose transparent transparent transparent;
+      }
+    }
+    &.advice, &.advice span{
+      background-color: $lime;
+      &:after{
+        border-color: $lime transparent transparent transparent;
+      }
+    }
+    &.wow, &.wow span{
+      background-color: $fire;
+      &:after{
+        border-color: $fire transparent transparent transparent;
+      }
+    }
+  }
+}

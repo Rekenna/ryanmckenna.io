@@ -1,0 +1,135 @@
+#content article{
+  font-size: 17px;
+  line-height: 1.5em;
+}
+
+.article-header{
+  left: 0;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2em;
+  @include media-breakpoint-down(md) {
+    width: 100% !important;
+  }
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 0;
+    &.fixed{
+      position: fixed;
+    }
+  }
+  h1{
+    color: $sunset;
+  }
+  a{
+    color: $sunset;
+  }
+  .topics{
+    text-align: left;
+    margin: 0 0 .25em;
+    padding: 0;
+    list-style-type: none;
+    li{
+      display: inline-block;
+      &+li{
+        margin-left: .25em;
+      }
+    }
+    li a{
+      display: inline-block;
+      position: relative;
+      background-color: $grey;
+        text-align: center;
+        color: $white;
+        padding: .25em .75em;
+        font-size: .8em;
+        border-radius: .5em;
+      transition: all .3s ease;
+      &.personal{
+        background-color: $mint;
+      }
+      &.design{
+        background-color: $baby;
+      }
+      &.development{
+        background-color: $sunset;
+      }
+      &.dnd{
+        background-color: $periwinkle;
+      }
+      &.gaming{
+        background-color: $torquiose;
+      }
+      &.advice{
+        background-color: $lime;
+      }
+      &.wow{
+        background-color: $fire;
+      }
+      &:hover{
+        text-decoration: none;
+        opacity: .8;
+        color: $white;
+      }
+    }
+  }
+}
+
+blockquote{
+  padding: 1em .5em;
+  font-size: 2em;
+  line-height: 1.5em;
+  font-weight: 300;
+  p:last-child{
+    margin-bottom: 0;
+  }
+  em, strong{
+    font-weight: bold;
+  }
+}
+
+.featured-image{
+  margin:0 auto 2em;
+  display: block;
+  max-width: 100%;
+}
+
+.article-content{
+  color: $space;
+  h2,h3,h4,h5{
+    margin-bottom: .5em;
+  }
+  h2, h3{
+    font-family: $mont;
+    font-weight: bolder;
+    font-weight: 600;
+  }
+  h4, h5{
+    font-family: $source;
+    font-weight: lighter;
+    font-weight: 300;
+  }
+  p{
+    margin-bottom: 1em;
+  }
+  img{
+    margin: 2em auto;
+    display: block;
+  }
+  li{
+    margin: .5em 0;
+  }
+  img, p{
+    &+h2{
+      margin-top: 2em;
+    }
+    &+h3{
+      margin-top: 1.5em;
+    }
+    &+h4{
+      margin-top: 1.25em;
+    }
+    &+h5{
+      margin-top: 1em;
+    }
+  }
+}

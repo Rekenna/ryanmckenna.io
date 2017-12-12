@@ -2,25 +2,18 @@
   z-index: 1000;
   background: rgba($white, 0.9);
   padding: 10px;
-  @include media-breakpoint-up(md){
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 46px;
-    line-height: 46px;
-    padding: 0;
-  }
   .brand{
+    display: block;
+    text-align: center;
     font-weight: 600;
     font-family: $mont;
     color: $sunset;
+    margin-bottom: .5em;
   }
   ul{
     margin: 0;
     padding: 0;
     list-style-type: none;
-    text-align: right;
   }
   li{
     display: inline-block;
@@ -31,16 +24,32 @@
   .main-nav{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
   }
   .socials{
     margin-left: 30px;
   }
   nav a{
     color: $grey;
-    &:hover{
+    &:hover, &.active{
       text-decoration: none;
       color: $sunset;
+    }
+  }
+  @include media-breakpoint-up(md){
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    padding: 0;
+    .brand{
+      text-align: left;
+      margin-bottom: 0;
+    }
+    .main-nav{
+      justify-content: flex-end;
     }
   }
 }

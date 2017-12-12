@@ -1,0 +1,53 @@
+
+section.post-feed{
+  background-color: $cloud;
+  padding: 2em 0;
+  margin-bottom: 0;
+  .post{
+    padding-right: 1em;
+  }
+  a{
+    transition: all .3s ease;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .published{
+    font-size: .9em;
+  }
+  .link{
+    text-align: right;
+    margin-bottom: 0;
+    a{
+      color: $space;
+      position: relative;
+      padding: 0 .25em .25em;
+      &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        width: 0;
+        background-color: $grey;
+        transition: all .3s ease;
+      }
+      &:hover{
+        color: $sunset;
+        &:after{
+          width: 100%;
+          background-color: $sunset;
+        }
+      }
+    }
+  }
+  h5{
+    margin-bottom: 0;
+  }
+  h5 a{
+    color: $space;
+    &:hover{
+      color: $sunset;
+    }
+  }
+}

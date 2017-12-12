@@ -1,0 +1,23 @@
+.socials{
+  svg{
+    position: relative;
+    top: 3px;
+    max-width: 15px;
+  }
+  a, i, svg{
+    transition: all .3s ease;
+  }
+  a{
+    color: $grey;
+    i, path{
+      color: $space;
+      fill: $space;
+
+    }
+    &:hover, &:hover i, &:hover path{
+      text-decoration: none;
+      color: $sunset;
+      fill: $sunset;
+    }
+  }
+}

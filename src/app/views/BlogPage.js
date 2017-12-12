@@ -1,62 +1,82 @@
 import React, {Component} from 'react';
-import {client} from "../../config/client";
+import {Link} from 'react-router-dom';
+import {Helmet} from "react-helmet";
 
-import Banner from '../../assets/splash.jpg';
-
-import PostTease from "../components/PostTease";
-import FeaturedPost from "../components/FeaturedPost";
+var moment = require('moment');
+var slugify = require('slugify');
 
 export default class BlogPage extends Component {
-    constructor(){
-        super();
 
-        this.state = {
-            posts: []
-        }
-
-        this._fetchPosts = this._fetchPosts.bind(this);
+    state = {
+        sortedBy: 'published'
     }
 
-    _fetchPosts(){
-        const self = this;
-
-        client.getEntries({
-            'content_type': 'blogPost'
-        }).then(function (entries) {
-            self.setState({
-                posts: entries.items
-            })
+    _getPreviews(sortedPosts){
+        return sortedPosts.map((post) =>{
+            return PostPreview(post)
         })
-    }
-
-    _getPosts(){
-        return this.state.posts.map((post) => {
-            return <PostTease key={post.sys.id} id={post.sys.id} fields={post.fields}/>
-        });
-    }
-
-    componentDidMount(){
-        this._fetchPosts()
     }
 
     render() {
 
-        const posts = this._getPosts();
+        const sortedPosts = this.props.posts.sort( (a,b) => {
+            switch (this.state.sortedBy){
+                // case('topic'):
+                //
+                //     break;
+                default: // Published
+                    return moment(b.fields.published).isAfter(moment(a.fields.published));
+            }
+        });
+
+        let previews = this._getPreviews(sortedPosts)
 
         return (
             <div className="blog-page">
-                <div className="splash d-none d-md-block">
-                    <img src={Banner} alt="Splash of Colorado Mountains"/>
-                    <div className="content">
-                        <FeaturedPost post={this.state.posts[0]}/>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Blog - Ryan McKenna</title>
+                    <link rel="canonical" href={`http://www.ryanmckenna.io/blog`} />
+                </Helmet>
+                <section className="blog-grid">
+                    <div className="container">
+                        <div className="row">
+                            {previews}
+                        </div>
                     </div>
-                </div>
-                <main id="content" className="container">
-                    <div className="row">
-                        {posts}
-                    </div>
-                </main>
+                </section>
             </div>
         );
     }
+}
+
+function PostPreview(post){
+    const { sys, fields } = post;
+
+    let tags = fields.tags.map((tag) =>{
+        return <li key={tag}><a className={`topic ${slugify(tag, {lower: true})}`}><span>{tag}</span></a></li>
+    })
+
+    return(
+        <div className="col-md-6" key={sys.id}>
+            <Link to={`/blog/${fields.slug}`} className="image-link" style={{backgroundImage: `url('${fields.featuredImage.fields.file.url} '`}}/>
+            <div className="info post">
+                <div className="row">
+                    <div className="col-md-6">
+                        <ul className="topics">
+                            {tags}
+                        </ul>
+                    </div>
+                    <div className="col-md-6">
+                        <h5><Link to={`/blog/${fields.slug}`}>{fields.title}</Link></h5>
+                        <p className="published">{moment(fields.published).format('D MMMM YYYY')}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+BlogPage.defaultProps = {
+    posts: []
 }

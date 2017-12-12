@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="342px" height="321px" viewBox="0 0 342 321" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>Device Animation</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="6" height="8"></rect>
+        <rect id="path-2" x="140" y="0" width="6" height="8"></rect>
+        <rect id="path-3" x="113" y="0" width="6" height="8"></rect>
+        <rect id="path-4" x="0" y="0" width="180" height="100" rx="5"></rect>
+        <filter x="-1.1%" y="-2.0%" width="102.2%" height="104.0%" filterUnits="objectBoundingBox" id="filter-5">
+            <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <rect id="path-6" x="0" y="0" width="32" height="60" rx="5"></rect>
+        <filter x="-3.1%" y="-1.7%" width="106.2%" height="103.3%" filterUnits="objectBoundingBox" id="filter-8">
+            <feGaussianBlur stdDeviation="0.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <rect id="path-9" x="0" y="50" width="32" height="10"></rect>
+        <filter x="-21.9%" y="-50.0%" width="143.8%" height="240.0%" filterUnits="objectBoundingBox" id="filter-10">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-11" x="0" y="0" width="70" height="100" rx="5"></rect>
+        <filter x="-1.4%" y="-1.0%" width="102.9%" height="102.0%" filterUnits="objectBoundingBox" id="filter-13">
+            <feGaussianBlur stdDeviation="0.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <rect id="path-14" x="0" y="90" width="70" height="10"></rect>
+        <filter x="-10.0%" y="-50.0%" width="120.0%" height="240.0%" filterUnits="objectBoundingBox" id="filter-15">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-215.000000, -183.000000)">
+        <g id="Hero">
+            <g id="Splash">
+                <g id="Device-Animation" transform="translate(215.000000, 183.000000)">
+                    <g id="Lines" transform="translate(32.000000, 97.000000)">
+                        <g id="Power-Line" transform="translate(0.000000, 43.000000)">
+                            <path d="M3,7 C2.54835167,33.8003663 11.2150183,49.1336996 29,53 C52,58 42.6324886,107.761886 55,125 C75.1106164,153.030627 101.44395,170.363961 134,177" id="Path-2" stroke="#FFFFFF"></path>
+                            <g id="Rectangle-6">
+                                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                <rect stroke="#E4E3E3" stroke-width="1" x="0.5" y="0.5" width="5" height="7"></rect>
+                            </g>
+                        </g>
+                        <g id="Power-Line" transform="translate(151.000000, 43.000000)">
+                            <path d="M143,7 C141,46.3333333 129,63.6666667 107,59 C83.9821562,54.1174271 62.6324886,105.761886 75,123 C95.1106164,151.030627 70.1106164,169.030627 0,177" id="Path-2" stroke="#FFFFFF"></path>
+                            <g id="Rectangle-6">
+                                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                                <rect stroke="#E4E3E3" stroke-width="1" x="140.5" y="0.5" width="5" height="7"></rect>
+                            </g>
+                        </g>
+                        <g id="Power-Line" transform="translate(118.000000, 0.000000)">
+                            <path d="M116,7 C116.666667,11.6666667 116,18 114,26 C111,38 78.2531344,94.531374 58.41216,83 C24,63 -16,174 7,186 C22.3333333,194 28,205 24,219" id="Path-2" stroke="#FFFFFF"></path>
+                            <g id="Rectangle-6">
+                                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                                <rect stroke="#E4E3E3" stroke-width="1" x="113.5" y="0.5" width="5" height="7"></rect>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Connector" transform="translate(159.000000, 311.000000)">
+                        <rect id="Rectangle-8" fill="#FFFFFF" x="0" y="0" width="30" height="11"></rect>
+                        <circle id="Oval-2" fill="#FEC38F" cx="15.5" cy="5.5" r="2.5"></circle>
+                        <circle id="Oval-2" fill="#86BEFF" cx="6.5" cy="5.5" r="2.5"></circle>
+                        <circle id="Oval-2" fill="#A2F6C1" cx="24.5" cy="5.5" r="2.5"></circle>
+                    </g>
+                    <g id="Devices">
+                        <g id="Monitor" transform="translate(100.000000, 0.000000)">
+                            <path d="M50,125 C60,125 121,125 130,125 C130,132.5 114,140 90,140 C66,140 50,132.5 50,125 Z" id="base-bottom" stroke="#6D6E71" fill="#6D6E71"></path>
+                            <path d="M50,114 C60,114 121,114 130,114 C130,119 114,125 90,125 C66,125 50,121 50,114 Z" id="base-top" stroke="#6D6E71" fill="#6D6E71" transform="translate(90.000000, 119.500000) scale(1, -1) translate(-90.000000, -119.500000) "></path>
+                            <rect id="stand" fill="#828282" x="82" y="97" width="16" height="30"></rect>
+                            <g id="screen">
+                                <use fill="#FEC38F" fill-rule="evenodd" xlink:href="#path-4"></use>
+                                <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                                <rect stroke="#6D6E71" stroke-width="3" x="1.5" y="1.5" width="177" height="97" rx="5"></rect>
+                            </g>
+                        </g>
+                        <g id="Phone" transform="translate(310.000000, 80.000000)">
+                            <mask id="mask-7" fill="white">
+                                <use xlink:href="#path-6"></use>
+                            </mask>
+                            <g id="screen">
+                                <use fill="#A2F6C1" fill-rule="evenodd" xlink:href="#path-6"></use>
+                                <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-6"></use>
+                                <rect stroke="#6D6E71" stroke-width="1" x="0.5" y="0.5" width="31" height="59" rx="5"></rect>
+                            </g>
+                            <g id="Rectangle-4" mask="url(#mask-7)">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
+                                <use fill="#6D6E71" fill-rule="evenodd" xlink:href="#path-9"></use>
+                            </g>
+                            <circle id="Oval" stroke="#828282" fill="#6D6E71" mask="url(#mask-7)" cx="16" cy="55" r="3"></circle>
+                        </g>
+                        <g id="Tablet" transform="translate(0.000000, 40.000000)">
+                            <mask id="mask-12" fill="white">
+                                <use xlink:href="#path-11"></use>
+                            </mask>
+                            <g id="screen">
+                                <use fill="#86BEFF" fill-rule="evenodd" xlink:href="#path-11"></use>
+                                <use fill="black" fill-opacity="1" filter="url(#filter-13)" xlink:href="#path-11"></use>
+                                <rect stroke="#6D6E71" stroke-width="1" x="0.5" y="0.5" width="69" height="99" rx="5"></rect>
+                            </g>
+                            <g id="Rectangle-4" mask="url(#mask-12)">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-15)" xlink:href="#path-14"></use>
+                                <use fill="#6D6E71" fill-rule="evenodd" xlink:href="#path-14"></use>
+                            </g>
+                            <circle id="Oval" stroke="#828282" fill="#6D6E71" mask="url(#mask-12)" cx="35" cy="95" r="3"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
