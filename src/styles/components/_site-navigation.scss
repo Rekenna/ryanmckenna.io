@@ -2,6 +2,19 @@
   z-index: 1000;
   background: rgba($white, 0.9);
   padding: 10px;
+  opacity: 1;
+  &.loading, &.true{
+    background-color: transparent;
+    nav a {
+      color: $white;
+      &:hover{
+        color: $grey;
+      }
+    }
+    .brand{
+      color: $white;
+    }
+  }
   .brand{
     display: block;
     text-align: center;

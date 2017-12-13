@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 
-
 import {client, gaCode} from "./config/client";
-
 import { unregister } from './registerServiceWorker';
 
 import './styles/app.css';
@@ -24,8 +22,8 @@ import ProjectsPost from "./app/views/ProjectsPost";
 var ReactGA = require('react-ga');
 ReactGA.initialize(gaCode);
 
-const AppRoute = ({ component: Component, posts, projects, ...rest }) => (
-    <Route {...rest} render={props => (
+const AppRoute = ({ component: Component, location, posts, projects, ...rest }) => (
+    <Route {...rest} location={location} render={props => (
         <Component posts={posts} projects={projects} {...props}/>
     )}/>
 );
@@ -37,7 +35,6 @@ class App extends Component {
                 <div id="app" className="app">
                     <SiteNavigation/>
                     <Store/>
-                    <SiteFooter/>
                 </div>
             </Router>
         );
@@ -47,7 +44,8 @@ class App extends Component {
 class Store extends Component{
     state = {
         posts: [],
-        projects: []
+        projects: [],
+        loaded: false
     }
 
     _getData(){
@@ -60,7 +58,8 @@ class Store extends Component{
             });
             this.setState({
                 posts: posts,
-                projects: projects
+                projects: projects,
+                loaded: true
             })
         }).catch(console.error)
     }
@@ -69,21 +68,60 @@ class Store extends Component{
         this._getData()
     }
     render(){
+        const loaded = this.state.loaded
         return(
             <div className="page-content">
-                <div className="page-content">
-                    <SwitchTracker>
-                        <AppRoute exact path="/" component={HomePage} posts={this.state.posts} projects={this.state.projects}/>
-                        <AppRoute path="/blog/:slug" component={BlogPost} posts={this.state.posts}/>
-                        <AppRoute exact path="/blog" component={BlogPage} posts={this.state.posts}/>
-                        <AppRoute path="/projects/:slug" component={ProjectsPost} projects={this.state.projects}/>
-                        <AppRoute path="/projects" component={ProjectsPage} projects={this.state.projects}/>
-                        <Redirect to="/"/>
-                    </SwitchTracker>
+                <Loading loaded={loaded}/>
+                <SwitchTracker>
+                    <AppRoute exact path="/" component={HomePage} posts={this.state.posts} projects={this.state.projects}/>
+                    <AppRoute path="/blog/:slug" component={BlogPost} posts={this.state.posts}/>
+                    <AppRoute exact path="/blog" component={BlogPage} posts={this.state.posts}/>
+                    <AppRoute path="/projects/:slug" component={ProjectsPost} projects={this.state.projects}/>
+                    <AppRoute path="/projects" component={ProjectsPage} projects={this.state.projects}/>
+                    <Redirect to="/"/>
+                </SwitchTracker>
+                <SiteFooter/>
+            </div>
+        )
+    }
+}
+
+function Loading(props){
+    let loaded = props.loaded;
+
+    if(!loaded){
+        return(
+            <div className={`app-loading ${loaded}`}>
+                <SiteNavigation loaded={loaded}/>
+                <div className='content'>
+                    <div className="loader-container">
+                        <div className="loader">
+                            Loading...
+                        </div>
+                    </div>
+                    <h5>{props.message}</h5>
+                </div>
+            </div>
+        )
+    }else{
+        return(
+            <div className={`app-loading ${loaded}`}>
+                <SiteNavigation loaded={loaded}/>
+                <div className='content'>
+                    <div className="loader-container">
+                        <div className="loader">
+                            Loading...
+                        </div>
+                    </div>
+                    <h5>{props.message}</h5>
                 </div>
             </div>
         )
     }
+}
+
+Loading.defaultProps = {
+    message: 'Loading the things'
 }
 
 class SwitchTracker extends Switch {

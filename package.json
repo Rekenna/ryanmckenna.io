@@ -15,7 +15,7 @@
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
-    "react-waypoint": "^7.3.2",
+    "react-transition-group": "^2.2.1",
     "showdown": "^1.8.3",
     "slugify": "^1.2.6"
   },

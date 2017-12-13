@@ -6,7 +6,7 @@ import Socials from '../components/Socials'
 function SiteNavigation(props) {
     let currentPage = isCurrent(props.location.pathname)
     return (
-        <div className="site-navigation">
+        <div className={`site-navigation ${props.loaded} ${props.loaded === false ? 'loading' : 'loaded'}`}>
             <div className="container">
                 <div className="row">
                     <div className="col-md-3">

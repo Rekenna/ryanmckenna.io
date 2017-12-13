@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
-import Waypoint from 'react-waypoint';
 import {Helmet} from "react-helmet";
 
 var moment = require('moment');
@@ -16,12 +15,10 @@ export default class BlogPost extends Component {
 
     componentDidMount(){
         this._setPost(this.props);
-        this._fixHeader()
     }
 
     componentWillReceiveProps(nextProps){
         this._setPost(nextProps);
-        this._fixHeader()
     }
 
     _setPost(props){
@@ -33,14 +30,6 @@ export default class BlogPost extends Component {
         this.setState({
             post: filtered[0]
         })
-    }
-
-    _fixHeader(){
-        let articleHeader = document.getElementById("article-header")
-        if(articleHeader){
-            articleHeader.setAttribute("style", `width:${articleHeader.offsetWidth}px;top:${articleHeader.getBoundingClientRect().top}px;left:${articleHeader.getBoundingClientRect().left}px;`);
-            articleHeader.className = 'article-header fixed';
-        }
     }
 
     render() {
@@ -85,11 +74,9 @@ export default class BlogPost extends Component {
                 <main id="content" className="container">
                     <div className="row">
                         <div className="col-md-6">
-                            <Waypoint>
                                 <header className="article-header" id="article-header">
                                     {postHeader}
                                 </header>
-                            </Waypoint>
                         </div>
                         <div className="col-md-6">
                             {postContent}

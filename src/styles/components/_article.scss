@@ -4,18 +4,11 @@
 }
 
 .article-header{
-  left: 0;
   width: 100%;
   height: auto;
   margin-bottom: 2em;
-  @include media-breakpoint-down(md) {
-    width: 100% !important;
-  }
   @include media-breakpoint-up(lg) {
     margin-bottom: 0;
-    &.fixed{
-      position: fixed;
-    }
   }
   h1{
     color: $sunset;
@@ -62,7 +55,7 @@
       &.advice{
         background-color: $lime;
       }
-      &.wow{
+      &.warcraft{
         background-color: $fire;
       }
       &:hover{
@@ -90,6 +83,7 @@ blockquote{
 .featured-image{
   margin:0 auto 2em;
   display: block;
+  width: 100%;
   max-width: 100%;
 }
 
