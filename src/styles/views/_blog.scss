@@ -7,6 +7,30 @@
 
 .blog-post{
   padding: 2em 0;
+
+  .related-project{
+    margin: 2em 0;
+    background-color: $cloud;
+    padding: 1em;
+
+    .title{
+      text-transform: uppercase;
+      color: $grey;
+    }
+
+    .snippet{
+      color: $space;
+    }
+
+    a{
+      color: $space;
+      transition: all .3s ease;
+      &:hover{
+        text-decoration: none;
+        color: $sunset;
+      }
+    }
+  }
 }
 
 section.blog-grid{

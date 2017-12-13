@@ -126,12 +126,14 @@ Loading.defaultProps = {
 
 class SwitchTracker extends Switch {
     componentDidMount(){
+        window.scroll(0, 0);
         if (process.env.NODE_ENV !== 'development') {
             ReactGA.set({ page: window.location.pathname + window.location.search });
             ReactGA.pageview(window.location.pathname + window.location.search);
         }
     }
     componentWillReceiveProps(){
+        window.scroll(0, 0);
         if (process.env.NODE_ENV !== 'development') {
             ReactGA.set({ page: window.location.pathname + window.location.search });
             ReactGA.pageview(window.location.pathname + window.location.search);

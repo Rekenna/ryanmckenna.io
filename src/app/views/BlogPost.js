@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
+import {Link} from 'react-router-dom';
 import {Helmet} from "react-helmet";
 
 var moment = require('moment');
@@ -38,12 +39,20 @@ export default class BlogPost extends Component {
 
         let helmet,
             postHeader,
-            postContent
+            postContent,
+            relatedProject;
 
         if(post){
             let tags = post.fields.tags.map((tag) =>{
                 return <li key={tag}><a className={`topic ${slugify(tag, {lower: true})}`}><span>{tag}</span></a></li>
-            })
+            });
+            helmet = (
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>{post.fields.title} - Ryan McKenna</title>
+                    <link rel="canonical" href={`http://www.ryanmckenna.io/blog/${post.fields.slug}`} />
+                </Helmet>
+            );
             postHeader = (
                 <div>
                     <h1>{post.fields.title}</h1>
@@ -59,13 +68,15 @@ export default class BlogPost extends Component {
                     <article className="article-content" dangerouslySetInnerHTML={{__html: converter.makeHtml(post.fields.content)}}/>
                 </div>
             );
-            helmet = (
-                <Helmet>
-                    <meta charSet="utf-8" />
-                    <title>{post.fields.title} - Ryan McKenna</title>
-                    <link rel="canonical" href={`http://www.ryanmckenna.io/blog/${post.fields.slug}`} />
-                </Helmet>
-            )
+            if(post.fields.relatedProject){
+                relatedProject = (
+                    <div className="related-project">
+                        <p className="title">Related Project</p>
+                        <h5><Link to={`/projects/${slugify(post.fields.relatedProject.fields.title, {lower: true})}`}>{post.fields.relatedProject.fields.title}</Link></h5>
+                        <p className="snippet">{post.fields.relatedProject.fields.snippet}</p>
+                    </div>
+                );
+            };
         }
 
         return (
@@ -77,6 +88,9 @@ export default class BlogPost extends Component {
                                 <header className="article-header" id="article-header">
                                     {postHeader}
                                 </header>
+                                <div className="related">
+                                    {relatedProject}
+                                </div>
                         </div>
                         <div className="col-md-6">
                             {postContent}
