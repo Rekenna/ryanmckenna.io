@@ -8,9 +8,9 @@ var showdown  = require('showdown'),
 
 export default class PostFeed extends Component{
 
-    _getPreviews(sortedPosts){
+    _getPreviews(posts){
         let count = 0;
-        return sortedPosts.map((post) => {
+        return posts.map((post) => {
             count++;
             if(count <= 4){
                 return PostPreview(post)
@@ -21,11 +21,7 @@ export default class PostFeed extends Component{
 
     render(){
 
-        const sortedPosts = this.props.posts.sort( (a,b) => {
-            return moment(b.fields.published).isAfter(moment(a.fields.published));
-        });
-
-        let previews = this._getPreviews(sortedPosts)
+        let previews = this._getPreviews(this.props.posts)
 
         return(
             <section className="post-feed">

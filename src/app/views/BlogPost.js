@@ -102,6 +102,7 @@ export default class BlogPost extends Component {
     }
 }
 
+
 BlogPost.propTypes = {
     posts: PropTypes.array.isRequired
 }

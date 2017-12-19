@@ -7,29 +7,15 @@ var slugify = require('slugify');
 
 export default class BlogPage extends Component {
 
-    state = {
-        sortedBy: 'published'
-    }
-
-    _getPreviews(sortedPosts){
-        return sortedPosts.map((post) =>{
+    _getPreviews(posts){
+        return posts.map((post) =>{
             return PostPreview(post)
         })
     }
 
     render() {
 
-        const sortedPosts = this.props.posts.sort( (a,b) => {
-            switch (this.state.sortedBy){
-                // case('topic'):
-                //
-                //     break;
-                default: // Published
-                    return moment(b.fields.published).isAfter(moment(a.fields.published));
-            }
-        });
-
-        let previews = this._getPreviews(sortedPosts)
+        let previews = this._getPreviews(this.props.posts)
 
         return (
             <div className="blog-page">

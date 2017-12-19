@@ -18,6 +18,7 @@ import BlogPost from "./app/views/BlogPost";
 import { ProjectsPage } from "./app/views/ProjectsPage";
 import ProjectsPost from "./app/views/ProjectsPost";
 
+var moment = require('moment');
 // Analytics
 var ReactGA = require('react-ga');
 ReactGA.initialize(gaCode);
@@ -57,7 +58,7 @@ class Store extends Component{
                 return entry.sys.contentType.sys.id === 'project'
             });
             this.setState({
-                posts: posts,
+                posts: sortPosts(posts),
                 projects: projects,
                 loaded: true
             })
@@ -76,7 +77,7 @@ class Store extends Component{
                     <AppRoute exact path="/" component={HomePage} posts={this.state.posts} projects={this.state.projects}/>
                     <AppRoute path="/blog/:slug" component={BlogPost} posts={this.state.posts}/>
                     <AppRoute exact path="/blog" component={BlogPage} posts={this.state.posts}/>
-                    <AppRoute path="/projects/:slug" component={ProjectsPost} projects={this.state.projects}/>
+                    <AppRoute path="/projects/:slug" component={ProjectsPost} projects={this.state.projects} posts={this.state.posts}/>
                     <AppRoute path="/projects" component={ProjectsPage} projects={this.state.projects}/>
                     <Redirect to="/"/>
                 </SwitchTracker>
@@ -84,6 +85,13 @@ class Store extends Component{
             </div>
         )
     }
+}
+
+function sortPosts(posts){
+    let sortedPosts = posts.sort( (a,b) => {
+        return moment(b.fields.published).isAfter(moment(a.fields.published));
+    });
+    return sortedPosts
 }
 
 function Loading(props){
