@@ -98,6 +98,7 @@ export default class ProjectsPost extends Component {
                                     {projectHeader}
                                 </header>
                             <div className="related-posts">
+                                <p className="title">Related Posts</p>
                                 {relatedPosts}
                             </div>
                         </div>

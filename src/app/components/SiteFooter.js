@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Socials from "./Socials";
 
 const heart = (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M414.9 24C361.8 24 312 65.7 288 89.3 264 65.7 214.2 24 161.1 24 70.3 24 16 76.9 16 165.5c0 72.6 66.8 133.3 69.2 135.4l187 180.8c8.8 8.5 22.8 8.5 31.6 0l186.7-180.2c2.7-2.7 69.5-63.5 69.5-136C560 76.9 505.7 24 414.9 24z"/></svg>)
@@ -10,7 +11,12 @@ export default function SiteFooter(props) {
                 <div className="row">
                     <div className="col-md-3">
                         <div className="cell">
-                            <p>Made with <i className="heart">{heart}</i> by Ryan McKenna.<br/>Copyright &copy; 2017</p>
+                            <ul className="links">
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/projects">Projects</Link></li>
+                                <li><Link to="/blog">Blog</Link></li>
+                                <li><Link to="/sitemap">Sitemap</Link></li>
+                            </ul>
                         </div>
                     </div>
                     <div className="col-md-3">
@@ -38,6 +44,9 @@ export default function SiteFooter(props) {
                                 </form>
                             </div>
                         </div>
+                    </div>
+                    <div className="col-md-12">
+                        <p className="copyright">Made with <i className="heart">{heart}</i> by Ryan McKenna. Copyright &copy; 2017</p>
                     </div>
                 </div>
             </div>

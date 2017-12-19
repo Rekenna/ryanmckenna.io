@@ -17,6 +17,7 @@ import BlogPage from "./app/views/BlogPage";
 import BlogPost from "./app/views/BlogPost";
 import { ProjectsPage } from "./app/views/ProjectsPage";
 import ProjectsPost from "./app/views/ProjectsPost";
+import SiteMap from "./app/views/SiteMap";
 
 var moment = require('moment');
 // Analytics
@@ -78,7 +79,8 @@ class Store extends Component{
                     <AppRoute path="/blog/:slug" component={BlogPost} posts={this.state.posts}/>
                     <AppRoute exact path="/blog" component={BlogPage} posts={this.state.posts}/>
                     <AppRoute path="/projects/:slug" component={ProjectsPost} projects={this.state.projects} posts={this.state.posts}/>
-                    <AppRoute path="/projects" component={ProjectsPage} projects={this.state.projects}/>
+                    <AppRoute exact path="/projects" component={ProjectsPage} projects={this.state.projects}/>
+                    <AppRoute exact path="/sitemap" component={SiteMap} projects={this.state.projects} posts={this.state.posts}/>
                     <Redirect to="/"/>
                 </SwitchTracker>
                 <SiteFooter/>

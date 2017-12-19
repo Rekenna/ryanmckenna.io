@@ -1,0 +1,20 @@
+.sitemap-page{
+  margin-top: 0px;
+  @include media-breakpoint-up(md) {
+    margin-top: 46px;
+  }
+}
+
+.sitemap-content{
+  padding: 2em 0;
+
+  h1{
+    margin-bottom: 1em;
+  }
+
+  .links{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}

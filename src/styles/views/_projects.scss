@@ -13,6 +13,11 @@
   margin: 2em auto;
   background-color: $cloud;
   padding: 1em;
+  .title{
+    text-transform: uppercase;
+    color: $grey;
+  }
+
   .related-post{
     border-bottom: 1px solid $fog;
     margin-bottom: 1em;
